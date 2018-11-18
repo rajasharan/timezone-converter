@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Timezone Converter</title>
+
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/bulma-slider/dist/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="node_modules/bulma-divider/dist/css/bulma-divider.min.css">
+    <link rel="stylesheet" href="node_modules/bulma-tooltip/dist/css/bulma-tooltip.min.css">
+    <link rel="stylesheet" href="node_modules/bulma-switch/dist/css/bulma-switch.min.css">
+    <link rel="stylesheet" href="node_modules/bulma-timeline/dist/css/bulma-timeline.min.css">
+
+    <!--<script src="http://momentjs.com/downloads/moment.js"></script>-->
+    <!--<script src="http://momentjs.com/downloads/moment-timezone.js"></script>-->
+    <!--<script src="http://momentjs.com/downloads/moment-timezone-with-data.js"></script>-->
+    <style>
+        .logo {
+            padding: 0px;
+            vertical-align: middle;
+        }
+        .timeline > .timeline-item {
+            padding-bottom: 0px;
+        }
+        .box {
+            position: relative;
+        }
+        #from::before, #to::before {
+            font-size: small;
+            color: black;
+            position: absolute;
+            top: -20px;
+            left: 0px;
+        }
+        #from::before {
+            content: 'FROM:';
+        }
+        #to::before {
+            content: 'TO:';
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title"> Timezone Converter </h1>
+          <h2 class="subtitle">
+            built with
+            <a class="button is-primary logo" href="https://bulma.io/">
+              <span>Bulma</span>
+            </a>
+            ,
+            <a class="button is-primary logo" href="https://reactjs.org/docs/hooks-intro.html">
+              <span class="icon is-small">
+                <i class="fab fa-react"></i>
+              </span>
+              <span>React Hooks</span>
+            </a>
+            ,
+            <a class="button is-primary logo" href="https://momentjs.com/">
+              <span>Moment.js</span>
+            </a>
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="app"></section>
+    <script src="main.js"></script>
+
+    <a href="https://github.com/rajasharan/timezone-converter">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub">
+    </a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "timezone-converter",
+  "version": "1.0.0",
+  "description": "online timzone converter",
+  "scripts": {
+    "watch": "parcel watch index.html",
+    "serve": "cd dist && lite-server",
+    "start": "concurrently \"npm:watch\" \"npm:serve\"",
+    "build": "parcel build index.html --public-url=./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rajasharan@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.5.0",
+    "bulma": "^0.7.2",
+    "bulma-divider": "^2.0.1",
+    "bulma-slider": "^2.0.0",
+    "bulma-switch": "^2.0.0",
+    "bulma-timeline": "^3.0.0",
+    "bulma-tooltip": "^2.0.2",
+    "classnames": "^2.2.6",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.23",
+    "react": "^16.7.0-alpha.0",
+    "react-dom": "^16.7.0-alpha.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.1.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "concurrently": "^4.0.1",
+    "lite-server": "^2.4.0",
+    "parcel-bundler": "^1.10.3"
+  }
+}
