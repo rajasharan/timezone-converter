@@ -3,13 +3,12 @@ import moment from 'moment-timezone';
 import classNames from 'classnames';
 
 export function Time({timezone, date, reset, callback}) {
-  const isAM = (timezone) => moment.tz(timezone).format('A') === 'AM'? true: false;
-  const getHours = (timezone) => moment.tz(timezone).hours();
-  const getMinutes = (timezone) => moment.tz(timezone).minutes();
+  const isAM = () => moment.tz(timezone).format('A') === 'AM'? true: false;
+  const getHours = () => moment.tz(timezone).hours();
+  const getMinutes = () => moment.tz(timezone).minutes();
   const toRange = (hour, min) => (hour * 60 + min) % 720;
   const toHour = (range) => Math.floor(range / 60);
   const toMinute = (range) => range % 60;
-  const time = (range) => moment().hour(toHour(range)).minute(toMinute(range)).format('hh:mm');
 
   function offset() {
     if (date) {
@@ -23,12 +22,17 @@ export function Time({timezone, date, reset, callback}) {
     }
   }
 
-  const [range, setRange] = useState(toRange(getHours(timezone), getMinutes(timezone)));
-  const [am, setAM] = useState(isAM(timezone));
+  const [range, setRange] = useState(toRange(getHours(), getMinutes()));
+  const [am, setAM] = useState(isAM());
+
+  const time = (range) => {
+    const hour = am? toHour(range): toHour(range) + 12;
+    return moment.tz(timezone).hour(hour).minute(toMinute(range)).format('hh:mm');
+  };
 
   useEffect(() => {
-    setRange(toRange(getHours(timezone), getMinutes(timezone)));
-    setAM(isAM(timezone));
+    setRange(toRange(getHours(), getMinutes()));
+    setAM(isAM());
   }, [timezone, reset])
 
   useEffect(() => {
